@@ -15,8 +15,12 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": ["@emotion/react/types/css-prop"]
+    "types": ["@emotion/react/types/css-prop", "node", "jest", "@testing-library/jest-dom"]
   },
-  "include": ["src", "jest.setup.ts"],
+  "include": [
+    "src",
+    "jest.setup.ts",
+    "node_modules/@types/jest/index.d.ts"
+  ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }
