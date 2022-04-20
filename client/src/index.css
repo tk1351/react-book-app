@@ -9,6 +9,7 @@ body {
   height: 100vh;
   color: #f2f2f2;
   background-color: #383838;
+  position: relative;
 }
 
 code {
