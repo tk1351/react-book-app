@@ -7,6 +7,7 @@ import {
   listItems,
   title
 } from './style'
+import { hiddenOverLine } from '../../../utils'
 
 type List = {
   title: string
@@ -19,9 +20,6 @@ type Props = {
   imageHeight?: number | string
   list?: List[]
 }
-
-const hiddenOverTwoLine = { WebkitBoxOrient: 'vertical', WebkitLineClamp: 2 }
-
 export const Detail: FC<Props> = ({
   bookTitle = '',
   imageSrc = '',
@@ -31,7 +29,7 @@ export const Detail: FC<Props> = ({
   <div css={detail}>
     <Image src={imageSrc} height={imageHeight} />
     <div css={descriptionListWrapper}>
-      <h3 css={title} style={hiddenOverTwoLine as CSSProperties}>
+      <h3 css={title} style={hiddenOverLine(2) as CSSProperties}>
         {bookTitle}
       </h3>
       <dl aria-label="list">

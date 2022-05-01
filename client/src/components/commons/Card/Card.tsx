@@ -7,6 +7,7 @@ import {
   cardLink,
   cardTitle
 } from './style'
+import { hiddenOverLine } from '../../../utils'
 
 type Props = {
   title?: string
@@ -15,8 +16,6 @@ type Props = {
   href?: string
   height?: number | string
 }
-
-const hiddenOverFourthLine = { WebkitBoxOrient: 'vertical', WebkitLineClamp: 4 }
 
 export const Card: FC<Props> = ({
   title = '',
@@ -33,7 +32,7 @@ export const Card: FC<Props> = ({
       <a href={href} css={cardLink} target="_blank" rel="noopener noreferrer">
         <h3 css={cardTitle}>{title}</h3>
       </a>
-      <p css={cardDescription} style={hiddenOverFourthLine as CSSProperties}>
+      <p css={cardDescription} style={hiddenOverLine(4) as CSSProperties}>
         {description}
       </p>
     </div>
